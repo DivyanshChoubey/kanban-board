@@ -29,7 +29,6 @@ class TaskUpdateView(APIView):
                 },
                 status=status.HTTP_400_BAD_REQUEST
             )
-
         if "title" in data:
             task.title = data["title"]
         if "description" in data:

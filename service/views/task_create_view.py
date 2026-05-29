@@ -6,7 +6,6 @@ from rest_framework import status
 from service.models import User, Tasks, TaskURL
 
 
-
 class TaskCreateView(APIView):
     def post(self, request):
         serializer = TaskCreateSerializer(data=request.data)
