@@ -7,8 +7,8 @@ from rest_framework import status
 
 
 class TaskGetView(APIView):
-    def get(self, request):
-        task = Tasks.objects.all().order_by("-id")
+    def get(self, request, id):
+        task = Tasks.objects.filter(user=id).order_by("-id")
         serializer = TaskGetSerializer(task, many=True)
 
         return Response(
